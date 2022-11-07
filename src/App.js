@@ -9,6 +9,7 @@ import Exchanges from "./components/Exchanges";
 import CoinDetails from "./components/CoinDetails";
 // import FakeMenu from "./components/FakeMenu";
 // import FakeMenu from "./components/FakeMenu";
+// import FakeMenu from "./components/FakeMenu";
 
 import "./App.css";
 
