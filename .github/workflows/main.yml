@@ -6,9 +6,9 @@ name: Deploy on Surge
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,23 +29,23 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-       
-#       - name: Install Node.js
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: 16
-#       - run: npm ci
-#       - run: npm test
-      - name: Install Node.js    
-        uses: actions/checkout@v2
-      
-#       - name: Yarn setup
-#         uses: DerYeger/yarn-setup-action@master
-#         with:
-#           node-version: 16
-#           cmd: install # will run `yarn install` command
-      
+
+      - name: Install Node.js
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm test
+      # - name: Install Node.js
+      #   uses: actions/checkout@v2
+
+      #       - name: Yarn setup
+      #         uses: DerYeger/yarn-setup-action@master
+      #         with:
+      #           node-version: 16
+      #           cmd: install # will run `yarn install` command
+
       - name: Install Yarn
         uses: borales/actions-yarn@v2.3.0
         with:
@@ -54,7 +54,7 @@ jobs:
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build # will run `yarn build` command
-          
+
       - name: Setup Surge
         run: npm install --global surge
       - name: Execute Deployment with Surge
