@@ -1,6 +1,6 @@
 /* CoinCard */
 .coin-card {
-    border: 1px solid black;
+    border: 1px solid rgb(214, 214, 214);
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
@@ -16,4 +16,20 @@
     display: block;
     width: 40%;
     margin: 4px auto;
+}
+
+/* Coin Details */
+.text-red {
+    color: red;
+}
+
+.text-green {
+    color: green;
+}
+
+.listGroup {
+    justify-content: center;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
 }

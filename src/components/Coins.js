@@ -26,7 +26,7 @@ const Coins = () => {
   }
 
   const currencySymbol =
-    currency === "jpy" ? "₹" : currency === "eur" ? "€" : "$";
+    currency === "jpy" ? "¥" : currency === "eur" ? "€" : "$";
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -84,7 +84,7 @@ const Coins = () => {
           </div>
           <div className="form-check form-check-inline">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="radio"
               name="inlineRadioOptions"
               id="inlineRadio3"
@@ -97,10 +97,12 @@ const Coins = () => {
               jpy
             </label>
           </div>
+
           <Row>
             {coins.map((item, index) => {
               // console.log(index);
               return (
+                // <Link className={"nav-link"} to={`/coin/${item.id}}`}>
                 <CoinCard
                   id={item.id}
                   key={item.id}
@@ -109,9 +111,11 @@ const Coins = () => {
                   img={item.image}
                   symbol={item.symbol}
                   currencySymbol={currencySymbol}></CoinCard>
+                // </Link>
               );
             })}
           </Row>
+
           <Pagination style={{ margin: "0 auto", width: "60%" }}>
             <Pagination.First
               onClick={() => {

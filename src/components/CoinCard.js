@@ -1,8 +1,9 @@
 import React from "react";
 
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 
-const CoinCard = ({ name, img, price, symbol, currencySymbol }) => {
+const CoinCard = ({ id, name, img, price, symbol, currencySymbol }) => {
   return (
     <Col
       xs={6}
@@ -11,14 +12,16 @@ const CoinCard = ({ name, img, price, symbol, currencySymbol }) => {
       lg={2}
       className=""
       style={{ paddingTop: "10px" }}>
-      <div className="coin-card">
-        <img src={img} alt="" />
-        <p>{symbol}</p>
-        <h5>{name}</h5>
-        <p>
-          {currencySymbol} {price}
-        </p>
-      </div>
+      <Link className={"nav-link"} to={`/coin/${id}`}>
+        <div className="coin-card">
+          <img src={img} alt="" />
+          <p>{symbol}</p>
+          <h5>{name}</h5>
+          <p>
+            {currencySymbol} {price}
+          </p>
+        </div>
+      </Link>
     </Col>
   );
 };
